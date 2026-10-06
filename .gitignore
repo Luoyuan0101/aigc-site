@@ -1,0 +1,33 @@
+# 依赖
+/node_modules
+/.pnp
+.pnp.js
+
+# 构建产物
+/.next/
+/out/
+/build
+/dist
+
+# 环境变量（不要把密钥传上去！）
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 调试日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器与系统
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+
+# 其它
+*.tsbuildinfo
+next-env.d.ts

@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#FAFAFC] text-slate-700 antialiased;
+}
+
+/* 页面底纹：淡淡的马卡龙光斑 */
+.page-glow::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(600px 340px at 12% -4%, rgba(255, 209, 220, 0.55), transparent 70%),
+    radial-gradient(620px 360px at 88% 2%, rgba(204, 232, 247, 0.55), transparent 70%),
+    radial-gradient(700px 420px at 50% 100%, rgba(223, 212, 245, 0.4), transparent 70%);
+}
+
+.wrap {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+.card {
+  @apply rounded-2xl border border-slate-200/80 bg-white shadow-card transition duration-300;
+}
+
+.card-hover {
+  @apply hover:-translate-y-1 hover:border-slate-300 hover:shadow-lift;
+}
+
+.chip {
+  @apply inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium;
+}
+
+.prose-cn p {
+  @apply leading-8 text-slate-600;
+}
+
+.grid-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d7dbe3;
+  border-radius: 8px;
+  border: 2px solid #fafafc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c3c9d4;
+}
