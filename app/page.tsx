@@ -33,9 +33,10 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-[15.5px] leading-8 text-indigo-100/85">
-              这是一个关于 <b className="text-white">AIGC</b>
-              （人工智能生成内容）的科普站：它是什么、行业现在在做什么、有哪些真实案例、还卡在哪里，
-              以及我打算从哪个角度切进去做自己的项目。
+              这是一份关于 <b className="text-white">AIGC</b>
+              （人工智能生成内容）的领域调研：它是什么、行业现在在做什么、有哪些真实案例、还卡在哪里 ——
+              最后落到我选定的方向：
+              <b className="text-white">做 AIGC 动漫角色 / 剧情动画生成器</b>。
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
@@ -198,10 +199,63 @@ export default function Home() {
         <div className="grid gap-3 sm:grid-cols-2">
           <NextLink href="/what" label="AIGC 是什么" hint="定义 · 与传统 AI 的区别" />
           <NextLink href="/trends" label="现在在做什么" hint="5 个方向 · 含 DAA 数据" />
-          <NextLink href="/cases" label="相关项目案例" hint="模型 · 教育 · 学生作品 · 建站工具" />
+          <NextLink href="/cases" label="相关项目案例" hint="动漫生成 · 模型 · 教育 · 学生作品" />
           <NextLink href="/limits" label="现存局限" hint="5 条 · 附调研来源" />
-          <NextLink href="/direction" label="我的方向" hint="A / B / C 三个候选" />
+          <NextLink
+            href="/direction"
+            label="我的方向"
+            hint="AIGC 动漫动画生成器 · 含分类与要求规整"
+          />
           <NextLink href="/trends#agent" label="直达：智能体 Agent" hint="2026 最热方向" />
+        </div>
+      </section>
+
+      {/* ---------- 我的方向 ---------- */}
+      <section className="border-t border-slate-200/70 bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
+        <div className="wrap py-16 sm:py-20">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_.9fr]">
+            <div>
+              <Eyebrow>调研的落点 · 我要做什么</Eyebrow>
+              <h2 className="mt-5 text-[26px] font-bold leading-snug text-ink-800 sm:text-[34px]">
+                我要在这个领域做一件事，
+                <br className="hidden sm:block" />
+                不是做一个网站
+              </h2>
+              <p className="mt-5 max-w-xl text-[14.5px] leading-8 text-slate-600">
+                网站只是这份调研的交付载体。真正要回答的是「在 AIGC 领域里切进哪一条线」——
+                我的答案是做 <b className="text-ink-800">AIGC 动漫角色 / 剧情动画生成器</b>，
+                并且把「想要什么」拆成一套超详细的要求规整模板，让生成结果可控、可复现。
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link
+                  href="/direction"
+                  className="rounded-xl bg-ink-800 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                >
+                  看完整方向 →
+                </Link>
+                <Link
+                  href="/cases"
+                  className="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-600 transition hover:border-slate-300"
+                >
+                  同赛道案例
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                { k: "8 种", v: "视觉风格分类" },
+                { k: "8 种", v: "运动生成方式" },
+                { k: "8 条", v: "生成技术路线" },
+                { k: "9 组", v: "要求规整字段" },
+              ].map((s) => (
+                <div key={s.v} className="card p-5">
+                  <div className="text-[22px] font-bold text-ink-800">{s.k}</div>
+                  <div className="mt-1 text-[12.5px] text-slate-500">{s.v}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </>

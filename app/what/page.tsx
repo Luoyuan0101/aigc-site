@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { definition, site } from "@/lib/content";
+import { definition } from "@/lib/content";
 import { PageHero, SectionTitle } from "@/components/ui";
 
-export const metadata = { title: `AIGC 是什么｜${site.title}` };
+export const metadata = { title: "AIGC 是什么" };
 
 export default function WhatPage() {
   return (
